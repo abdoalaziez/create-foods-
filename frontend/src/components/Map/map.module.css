@@ -1,32 +1,63 @@
 .container {
-    position: relative;
-    width: 35rem;
-    height: 22rem;
-    text-align: center;
+  position: relative;
+  width: 35rem;
+  height: 22rem;
+  text-align: center;
+}
+
+/* Make the map element responsive */
+.map {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Position the "find_location" button responsively */
+.find_location {
+  position: absolute;
+  margin: auto;
+  width: 12rem;
+  min-height: 2.5rem;
+  font-size: 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 0 0 1rem 1rem;
+  border: none;
+  border-top: 1px solid lightgrey;
+}
+
+.find_location:hover {
+  background-color: whitesmoke;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: 100%; /* Make container take full width on smaller screens */
+    height: auto; /* Adjust height for better fit on small screens */
+    padding: 1rem; /* Add padding for spacing */
   }
-  
-  .map {
-    width: 100% !important;
-    height: 100% !important;
-  }
-  
+
   .find_location {
-    position: absolute;
-    margin: auto;
-    width: 12rem;
-    min-height: 2.5rem;
-    font-size: 1rem;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: white;
-    cursor: pointer;
-    border-radius: 0 0 1rem 1rem;
-    border: none;
-    border-top: 1px solid lightgrey;
+    width: 10rem; /* Slightly reduce width of the button */
+    font-size: 0.9rem; /* Reduce font size for better fit */
+    min-height: 2rem; /* Adjust height of the button */
   }
-  
-  .find_location:hover {
-    background-color: whitesmoke;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%; /* Container takes full width on very small screens */
+    height: auto; /* Allow height to adjust */
+    padding: 1rem; /* Maintain padding for smaller screens */
   }
+
+  .find_location {
+    width: 8rem; /* Further reduce width for very small screens */
+    font-size: 0.8rem; /* Further reduce font size */
+    min-height: 1.8rem; /* Adjust button height for smaller devices */
+  }
+}
