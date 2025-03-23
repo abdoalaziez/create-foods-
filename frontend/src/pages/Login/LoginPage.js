@@ -80,6 +80,7 @@ import classes from './loginPage.module.css';
 import Title from '../../components/Title/Title';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
+import { EMAIL } from '../../constants/patterns';
 const LoginPage = () => {
       const {
     handleSubmit,
@@ -111,7 +112,7 @@ const returnUrl = params.get('returnUrl');
                 label="Email"
                 {...register('email', {
                   required: true,
-                  // pattern: EMAIL,
+                  pattern: EMAIL,
                 })}
                 error={errors.email}
               />

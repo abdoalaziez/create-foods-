@@ -11,7 +11,7 @@
   font-weight: 100;
   border-radius: 0.8rem;
   width: 100%;
-  max-width: 400px; /* Limit the button width to avoid it stretching too much */
+  max-width: 400px; 
   margin: 1rem auto;
   opacity: 0.8;
 }

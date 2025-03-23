@@ -1,14 +1,19 @@
 .container {
   margin-top: 1rem;
   display: flex;
-  margin: 0 0 6rem 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  min-width: 80px; /* منع الانهيار على الشاشات الصغيرة جدًا */
+  overflow-x: auto; /* السماح بالتمرير الأفقي عند الحاجة */
 }
 
+/* حجم افتراضي للشاشات الكبيرة */
 .content {
   width: 35rem;
   margin: 0 3rem 0 0;
+  max-width: 100%; /* لا يتجاوز العرض 100% */
 }
 
 .content,
@@ -26,50 +31,106 @@
   display: flex;
   justify-content: center;
 }
-
 .buttons {
   margin: 2rem;
   width: 35rem;
+  max-width: 100%;
+  margin-top: 7rem;
 }
 
-/* Responsive adjustments */
+/* شاشات متوسطة (1024px وأقل) */
+@media (max-width: 1024px) {
+  .content {
+    width: 80%;
+    margin: 0 auto 2rem auto;
+  }
+  .buttons {
+    width: 80%;
+    margin: 1rem auto;
+  }
+}
+
+/* أجهزة لوحية (768px وأقل) */
 @media (max-width: 768px) {
   .container {
-    margin: 0 1rem 6rem 1rem;
     flex-direction: column;
     align-items: center;
+    margin: 0 1rem;
   }
-
   .content {
-    width: 100%;
-    margin: 0 0 2rem 0;
+    width: 90%;
+    margin-bottom: 2rem;
   }
-
   .buttons {
-    width: 100%;
+    width: 90%;
     margin: 1rem 0;
-  }
-
-  .buttons_container {
-    flex-basis: 100%;
-    justify-content: center;
   }
 }
 
+/* شاشات صغيرة (480px وأقل) */
 @media (max-width: 480px) {
   .container {
-    margin: 0 1rem 6rem 1rem;
-    flex-direction: column;
-    align-items: center;
+    margin: 0.5rem;
   }
-
   .content {
     width: 100%;
-    margin: 0 0 2rem 0;
   }
-
   .buttons {
     width: 100%;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
   }
 }
+
+/* شاشات صغيرة جدًا (200px وأقل) */
+@media (max-width: 200px) {
+  .container {
+    width: 100%;
+    padding: 0;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .content {
+    width: 100%;
+    text-align: center;
+  }
+  .buttons {
+    width: 100%;
+  }
+  h3, span {
+    font-size: 6px;
+    word-break: break-word;
+  }
+}
+
+/* شاشات صغيرة جدًا جدًا (100px وأقل) */
+@media (max-width: 100px) {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+    min-width: 80px; /* ضمان أن المحتوى لا ينهار */
+  }
+  .content {
+    width: 100%;
+    text-align: center;
+    min-width: 80px;
+  }
+  .buttons {
+    width: 100%;
+    min-width: 80px;
+  }
+  h3, span {
+    font-size: 4px;
+    word-break: break-word;
+  }
+  button {
+    font-size: 3px;
+    padding: 1px 2px;
+    max-width: 100%;
+    min-width: 40px;
+  }
+}
+                

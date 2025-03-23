@@ -115,6 +115,7 @@ import Button from '../../components/Button/Button';
 import { Link } from 'react-router-dom';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
+import { EMAIL } from '../../constants/patterns';
 
 import React from 'react'
 
@@ -160,7 +161,7 @@ const RegisterPage = () => {
             label="Email"
             {...register('email', {
               required: true,
-            //   pattern: EMAIL,
+              pattern: EMAIL,
             })}
             error={errors.email}
           />

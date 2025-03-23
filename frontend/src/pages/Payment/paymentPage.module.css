@@ -29,10 +29,12 @@
   flex-basis: 100%;
   display: flex;
   justify-content: center;
- 
+   
 }
 
 .buttons {
   margin: 2rem;
   width: 35rem;
+  margin-bottom: 20rem;
+  margin-top: 10rem;
 }

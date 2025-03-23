@@ -177,8 +177,8 @@ export default function OrdersPage() {
               {Array.isArray(order.items) &&
                 order.items.map(item => (
                   <Link key={item.food.id} to={`/food/${item.food.id}`}>
-                    <img src={item.food.imageUrl} alt={item.food.name} />
-                  </Link>
+                   <img src={item.food.imageUrl} alt={item.food.name} />
+                 </Link>
                 ))}
             </div>
             <div className={classes.footer}>
